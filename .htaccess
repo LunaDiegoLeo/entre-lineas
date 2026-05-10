@@ -1,3 +1,4 @@
+DirectoryIndex index.html index.php
 RewriteEngine On
 
 RewriteRule ^top-top-top/([a-zA-Z0-9-]+)$ top-top-top.php?slug=$1 [L,QSA]
