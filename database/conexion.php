@@ -1,11 +1,13 @@
 <?php
-
+if (file_exists(__DIR__ . '/config_local.php')) {
+    include(__DIR__ . '/config_local.php');
+}
 class Conexion {
 
-    private $host = "localhost";
-    private $db = "entre_lineas";
-    private $user = "root";
-    private $password = "";
+    private $host = defined('DB_HOST') ? DB_HOST : getenv('DB_HOST');
+    private $user = defined('DB_USER') ? DB_USER : getenv('DB_USER');
+    private $password = defined('DB_PASS') ? DB_PASS : getenv('DB_PASS');
+    private $db = defined('DB_NAME') ? DB_NAME : getenv('DB_NAME');
 
     private $conexion;
 

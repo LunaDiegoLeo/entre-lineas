@@ -1,8 +1,10 @@
 # sistema
 .DS_Store
+Thumbs.db
 
 # php / xampp
 .env
+database/config_local.php
 
 # dependencias
 /vendor/
