@@ -4,7 +4,7 @@ Thumbs.db
 
 # php / xampp
 .env
-database/config_local.php
+database/conexion_local.php
 
 # dependencias
 /vendor/
