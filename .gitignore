@@ -1,0 +1,11 @@
+# sistema
+.DS_Store
+
+# php / xampp
+.env
+
+# dependencias
+/vendor/
+
+# logs
+*.log

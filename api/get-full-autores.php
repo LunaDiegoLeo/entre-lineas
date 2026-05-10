@@ -1,0 +1,31 @@
+<?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+header('Content-Type: application/json; charset=utf-8');
+require_once '../database/consultas.php';
+
+$consultas = new Consultas();
+
+
+if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+
+    http_response_code(405);
+
+    echo json_encode([
+        'error' => 'Método no permitido'
+    ]);
+
+    exit;
+
+}
+
+$id_autor = isset($_GET['id_autor']) ? $_GET['id_autor'] : null;
+if ($id_autor) {
+    $autores = $consultas->obtenerNoticiasPorAutor($id_autor);
+} else {
+    $autores = $consultas->obtenerautores();
+}
+
+
+echo json_encode($autores, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);

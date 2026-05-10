@@ -1,0 +1,7 @@
+RewriteEngine On
+
+RewriteRule ^top-top-top/([a-zA-Z0-9-]+)$ top-top-top.php?slug=$1 [L,QSA]
+
+RewriteRule ^categoria/([a-zA-Z0-9-]+)$ categoria.php?slug=$1 [L,QSA]
+
+RewriteRule ^autor/([a-zA-Z0-9-]+)$ autor.php?slug=$1 [L,QSA]
